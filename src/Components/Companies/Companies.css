@@ -1,8 +1,43 @@
-.c-container{
-    justify-content: space-around;
-    gap: 1rem;
+.c-wrapper {
+  width: 100%;
 }
 
-.c-container>img{
-    width: 9rem;
+.c-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allows logos to wrap to the next line on smaller screens */
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c-container > img {
+  width: 100%;
+  max-width: 9rem; /* Keeps normal size on desktop */
+  height: auto;    /* Preserves aspect ratio */
+  object-fit: contain;
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  .c-container {
+    justify-content: center;
+    gap: 1.5rem 2.5rem; /* Row gap and Column gap */
+  }
+
+  .c-container > img {
+    max-width: 7.5rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .c-container {
+    gap: 1.25rem 2rem;
+  }
+
+  .c-container > img {
+    max-width: 5.5rem; /* Scales logos down so 2 can fit neatly side-by-side */
+  }
 }

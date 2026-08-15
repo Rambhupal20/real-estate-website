@@ -1,57 +1,185 @@
-.v-container.image-container{
-    border: 8px solid rgb(232 232 232 / 93%);
+.v-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
-.v-container>div{
-    flex: 1;
+.v-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
 }
 
-.v-right{
-    gap: 0.5rem;
-}
-.accordion{
-    margin-top: 2rem;
-    border: none;
-
-}
-.accordionItem{
-    background: white;
-    border: 0.8px solid rgba(128, 128, 128, 0.143);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 20px;
+.v-container > div {
+  flex: 1;
 }
 
-.accordionItem.expended{
-    box-shadow: var(--shadow);
-    border-radius: 6px;
+/* Left Side Image */
+.v-left {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
-.accordionButton{
-    background: white;
-    padding: 1rem;
+
+.v-left .image-container {
+  width: 30rem;
+  height: 35rem;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 15rem 15rem 0 0;
+  border: 8px solid rgb(232 232 232 / 93%);
+}
+
+.v-left .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Side Content */
+.v-right {
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.accordion {
+  margin-top: 2rem;
+  border: none;
+  width: 100%;
+}
+
+.accordionItem {
+  background: white;
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  transition: all 250ms ease-in-out;
+}
+
+.accordionItem.expanded {
+  box-shadow: var(--shadow, 0 10px 25px rgba(0, 0, 0, 0.08));
+  border-color: rgba(64, 102, 255, 0.2);
+}
+
+.accordionButton {
+  background: white;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.accordionButton:focus {
+  outline: none;
+}
+
+.accordionButton .icon {
+  padding: 10px;
+  background: var(--lightBlue, #eeeeff);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordionButton .icon svg {
+  fill: var(--blue, #4066ff);
+}
+
+.accordionButton .accordion-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+/* Rotate arrow when open */
+.arrow-icon svg {
+  transition: transform 300ms ease;
+}
+
+.accordionItem.expanded .arrow-icon svg {
+  transform: rotate(180deg);
+}
+
+.accordionPanel {
+  padding: 0 1.2rem 1.2rem 1.2rem;
+}
+
+.accordionPanel p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+  .v-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .v-left {
+    justify-content: center;
+  }
+
+  .v-left .image-container {
+    width: 24rem;
+    height: 28rem;
+  }
+
+  .v-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .v-right .secondaryText {
+    text-align: center;
+  }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .accordionButton .accordion-title {
+    font-size: 0.9rem;
+  }
+
+  .accordionButton {
+    padding: 0.8rem 1rem;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+  .v-left .image-container {
     width: 100%;
-    justify-content: space-between;
-    cursor: pointer;
-}
-.icon{
-    padding: 10px;
-    background: #eeeeff;
-    border-radius: 5px;
+    height: 22rem;
+  }
 
-}
-.icon svg{
-    fill: var(--blue);
-}
-.accordionButton .primaryText{
-    font-size: 1.1rem;
-}
-@media (max-width:1024px){
-    .v-container{
-        flex-direction: column;
-    }
-    @media (max-width:768px){
-        .accordionButton .primaryText{
-            font-size: 0.8rem;
-        }
-    }
+  .accordionButton {
+    padding: 0.75rem;
+    gap: 0.6rem;
+  }
+
+  .accordionButton .icon {
+    padding: 6px;
+  }
+
+  .accordionButton .accordion-title {
+    font-size: 0.82rem;
+  }
+
+  .accordionPanel {
+    padding: 0 0.8rem 0.8rem 0.8rem;
+  }
 }

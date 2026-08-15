@@ -1,76 +1,130 @@
-.r-container{
-    overflow: hidden;
-    position: relative;
+.r-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-
-.r-head{
-    margin-bottom: 2rem;
-}
-.r-card{
-    gap: 0.6rem;
-    padding: 1rem;
-    border-radius: 10px;
-    max-width: max-content;
-    margin: auto;
-    transition: all 300ms ease-in;
-}
-.r-card>img{
-    width: 100%;
-    max-width: 15rem;
-}
-.r-card>:nth-child(2){
-    font-size: 1.2rem;
-    font-weight: 600;
+.r-container {
+  overflow: hidden;
+  position: relative;
 }
 
-.r-card>:nth-child(3){
-    font-size: 1.5rem;
-
-}
-.r-card>:nth-child(4){
-    font-size: 0.7rem;
-    width: 15rem;
-}
-.r-card:hover{
-    scale: 1.025;
-    cursor: pointer;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0)0%, rgba(136, 160, 255, 0.46)217.91%) ;
-    box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.21);
-}
-.swiper-horizontal{
-    overflow: visible;
+.swiper {
+  overflow: visible !important; /* Allows drop-shadows not to get clipped */
+  padding-bottom: 2rem !important;
 }
 
-.r-buttons{
-    position: absolute;
-    gap: 1rem;
-    top: -4rem;
-    right: 0;
-}
-.r-buttons button{
-    font-size: 1.2rem;
-    padding: 0.2rem 0.8rem;
-    color: blue;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-}
-.r-buttons>:nth-child(1){
-    background-color: #EEEEFF;
-
-}
-.r-buttons>:nth-child(2){
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+/* Header and Navigation Controls */
+.r-head-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
-@media (max-width:640px){
-    .r-head{
-        align-items: center;
+.r-head {
+  gap: 0.25rem;
+}
 
-    }
-    .r-buttons{
-        position: initial;
-    }
+.r-buttons {
+  gap: 1rem;
+  z-index: 10;
+}
+
+.r-buttons button {
+  font-size: 1.2rem;
+  padding: 0.3rem 0.9rem;
+  color: var(--blue, #4066ff);
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+}
+
+.r-buttons > :nth-child(1) {
+  background-color: var(--lightBlue, #eeeeff);
+}
+
+.r-buttons > :nth-child(2) {
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15);
+}
+
+.r-buttons button:hover {
+  transform: scale(1.08);
+}
+
+/* Card Styling */
+.r-card {
+  width: 100%;
+  gap: 0.6rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin: auto;
+  box-sizing: border-box;
+  background: white;
+  transition: all 300ms ease;
+}
+
+.r-card > img {
+  width: 100%;
+  height: 12rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.r-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.r-card > .primaryText {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.r-detail {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  width: 100%;
+}
+
+.r-card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(136, 160, 255, 0.3) 200%);
+  box-shadow: 0px 20px 30px rgba(136, 160, 255, 0.2);
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 768px) {
+  .r-head-container {
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .r-card > img {
+    height: 11rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .r-head-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .r-buttons {
+    align-self: flex-end;
+  }
+
+  .r-card > img {
+    height: 13rem;
+  }
 }

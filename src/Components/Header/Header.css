@@ -1,43 +1,100 @@
-.h-wrapper{
-    z-index: 99;
-    color: white;
-}
-.h-container{
-    justify-content: space-between;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: var(--secondary);
-}
-.h-menu{
-    gap: 2rem;
-
-}
-.h-menu*:hover{
-    cursor: pointer;
-}
-.menu-icon{
-    display: none;
-
+.h-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 99;
+  color: white;
+  background: transparent;
 }
 
-@media (max-width:768px){
-    .menu-icon{
-        display: block;
-    }
-    .h-menu{
-        color: var(--black);
-        position: absolute;
-        top: 3rem;
-        right: 4rem;
-        background: white;
-        flex-direction: column;
-        font-weight: 500;
-        gap: 2rem;
-        padding: 3rem;
-        border-radius: 10px;
-        align-items: flex-start;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-        transition: all 300ms ease-in;
-        z-index: 99;
-    }
+.h-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  position: relative;
+}
+
+.h-logo {
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.h-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.h-menu a {
+  color: var(--secondary, #8c8b8b);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 200ms ease;
+}
+
+.h-menu a:hover {
+  color: var(--blue, #4066ff);
+  cursor: pointer;
+}
+
+.h-menu .button a {
+  color: white;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: var(--secondary, #8c8b8b);
+  transition: transform 200ms ease;
+}
+
+.menu-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Tablet & Mobile Dropdown Viewport */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .h-menu {
+    position: absolute;
+    top: 4.5rem;
+    right: -100%; /* Hidden offscreen by default */
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    transition: right 300ms ease-in-out;
+    z-index: 100;
+    min-width: 14rem;
+  }
+
+  .h-menu a {
+    color: var(--black, #1f3e72);
+    width: 100%;
+  }
+
+  .h-menu .button {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+  .h-menu {
+    top: 4rem;
+    width: calc(100% - 3rem);
+    right: -120%;
+    padding: 2rem 1.5rem;
+  }
 }

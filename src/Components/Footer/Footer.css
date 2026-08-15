@@ -1,25 +1,70 @@
-.f-container{
-    justify-content: space-between;
-
-}
-.f-left{
-    gap: 1rem;
-
+.f-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
-.f-menu{
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-    font-weight: 500;
-
+.f-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
 }
 
-@media (max-width:768px){
-    .f-container{
-        justify-content: center;
-    }
-    .f-container>div{
-        align-items: center !important;
-        text-align: center;
-    }
+.f-left {
+  gap: 1rem;
+}
+
+.f-right {
+  gap: 0.5rem;
+}
+
+.f-menu {
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  flex-wrap: wrap; /* Allows menu links to wrap neatly on smaller screens */
+}
+
+.f-menu span {
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.f-menu span:hover {
+  color: var(--blue, #4066ff);
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 768px) {
+  .f-container {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .f-left,
+  .f-right {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .f-menu {
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Disables the forced line break so text flows naturally on mobile */
+  .desktop-break {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .f-menu {
+    gap: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
 }

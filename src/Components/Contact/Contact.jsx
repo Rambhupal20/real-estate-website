@@ -1,5 +1,5 @@
 import React from "react";
-import { MdCall } from "react-icons/md";
+import { MdCall, MdVideoCall } from "react-icons/md";
 import { BsFillChatDotsFill } from "react-icons/bs";
 import { HiChatBubbleBottomCenter } from "react-icons/hi2";
 import "./Contact.css";
@@ -17,11 +17,11 @@ const Contact = () => {
             believe a good place to live can make your life better.
           </span>
 
-          <div className="flexColStart ContactModes">
+          <div className="flexColStart contactModes">
             {/* First Row */}
             <div className="flexStart row">
               <div className="flexColCenter mode">
-                <div className="flexStart">
+                <div className="flexStart mode-header">
                   <div className="flexCenter icon">
                     <MdCall size={25} />
                   </div>
@@ -33,9 +33,9 @@ const Contact = () => {
                 <div className="flexCenter button">Call Now</div>
               </div>
 
-              {/* second Mode */}
-               <div className="flexColCenter mode">
-                <div className="flexStart">
+              {/* Second Mode */}
+              <div className="flexColCenter mode">
+                <div className="flexStart mode-header">
                   <div className="flexCenter icon">
                     <BsFillChatDotsFill size={25} />
                   </div>
@@ -49,11 +49,11 @@ const Contact = () => {
             </div>
 
             {/* Second Row */}
-             <div className="flexStart row">
+            <div className="flexStart row">
               <div className="flexColCenter mode">
-                <div className="flexStart">
+                <div className="flexStart mode-header">
                   <div className="flexCenter icon">
-                    <BsFillChatDotsFill size={25} />
+                    <MdVideoCall size={25} />
                   </div>
                   <div className="flexColStart detail">
                     <span className="primaryText">Video Call</span>
@@ -63,9 +63,9 @@ const Contact = () => {
                 <div className="flexCenter button">Video Call Now</div>
               </div>
 
-              {/* second Mode */}
-               <div className="flexColCenter mode">
-                <div className="flexStart">
+              {/* Fourth Mode */}
+              <div className="flexColCenter mode">
+                <div className="flexStart mode-header">
                   <div className="flexCenter icon">
                     <HiChatBubbleBottomCenter size={25} />
                   </div>
@@ -81,9 +81,9 @@ const Contact = () => {
         </div>
 
         {/* Right Side */}
-        <div className="c-right">
+        <div className="flexCenter c-right">
           <div className="image-container">
-            <img src="./contact.jpg" alt="contact" />
+            <img src="./contact.jpg" alt="Contact support" />
           </div>
         </div>
       </div>

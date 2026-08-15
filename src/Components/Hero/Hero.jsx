@@ -1,8 +1,8 @@
 import React from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import CountUp from "react-countup";
-import "./Hero.css";
 import { motion } from "framer-motion";
+import "./Hero.css";
 
 const Hero = () => {
   return (
@@ -23,7 +23,8 @@ const Hero = () => {
               Discover <br /> Most Suitable <br /> Property
             </motion.h1>
           </div>
-          <div className="flexColStart hero-dis">
+
+          <div className="flexColStart hero-des">
             <span className="secondaryText">
               Find a variety of properties that suit you very easily
             </span>
@@ -31,11 +32,13 @@ const Hero = () => {
               Forget all difficulties in finding a residence for you
             </span>
           </div>
+
           <div className="flexCenter search-bar">
-            <HiLocationMarker color="var(--blue)" size={25} />
-            <input type="text" />
+            <HiLocationMarker color="var(--blue, #4066ff)" size={25} />
+            <input type="text" placeholder="Search by location..." />
             <button className="button">Search</button>
           </div>
+
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
               <span>
@@ -44,6 +47,7 @@ const Hero = () => {
               </span>
               <span className="secondaryText">Premium Products</span>
             </div>
+
             <div className="flexColCenter stat">
               <span>
                 <CountUp start={1950} end={2000} duration={4} />
@@ -51,6 +55,7 @@ const Hero = () => {
               </span>
               <span className="secondaryText">Happy Customers</span>
             </div>
+
             <div className="flexColCenter stat">
               <span>
                 <CountUp end={28} />
@@ -61,7 +66,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Side Of The Container */}
+        {/* Right Side */}
         <div className="flexCenter hero-right">
           <motion.div
             initial={{ x: "7rem", opacity: 0 }}
@@ -72,7 +77,7 @@ const Hero = () => {
             }}
             className="image-container"
           >
-            <img src="./hero-image.png" alt="hero-image" />
+            <img src="./hero-image.png" alt="Modern property" />
           </motion.div>
         </div>
       </div>

@@ -16,10 +16,10 @@ const Value = () => {
   return (
     <section className="v-wrapper">
       <div className="paddings innerWidth flexCenter v-container">
-        {/* left Side */}
-        <div className="v-left">
+        {/* Left Side */}
+        <div className="flexCenter v-left">
           <div className="image-container">
-            <img src="./value.png" alt="" />
+            <img src="./value.png" alt="Our values" />
           </div>
         </div>
 
@@ -29,7 +29,7 @@ const Value = () => {
           <span className="primaryText">Value We Give To You</span>
           <span className="secondaryText">
             We are always ready to help by providing the best services for you.
-            <br />
+            <br className="desktop-break" />
             We believe a good place to live can make your life better.
           </span>
 
@@ -70,14 +70,14 @@ const CustomAccordionItem = ({ item, uuid }) => {
           </AccordionItemState>
 
           <div className="flexCenter icon">{item.icon}</div>
-          <span className="primaryText">{item.heading}</span>
-          <div className="flexCenter icon">
+          <span className="primaryText accordion-title">{item.heading}</span>
+          <div className="flexCenter icon arrow-icon">
             <MdOutlineArrowDropDown size={20} />
           </div>
         </AccordionItemButton>
       </AccordionItemHeading>
 
-      <AccordionItemPanel>
+      <AccordionItemPanel className="accordionPanel">
         <p className="secondaryText">{item.detail}</p>
       </AccordionItemPanel>
     </AccordionItem>

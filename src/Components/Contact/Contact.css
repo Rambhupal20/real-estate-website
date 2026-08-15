@@ -1,82 +1,151 @@
-.c-container{
-    justify-content: space-between;
+.c-wrapper {
+  width: 100%;
+  overflow: hidden;
 }
 
-.c-container>div{
-    flex: 1;
+.c-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
 }
 
-.c-right{
+.c-left {
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.c-right {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.c-right .image-container {
+  width: 30rem;
+  height: 35rem;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 15rem 15rem 0 0;
+  border: 8px solid rgba(255, 255, 255, 0.12);
+}
+
+.c-right .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Contact Modes Container */
+.contactModes {
+  width: 100%;
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+
+.contactModes .row {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+}
+
+/* Mode Cards */
+.mode {
+  flex: 1;
+  padding: 1.2rem;
+  border: 1.5px solid rgba(128, 128, 128, 0.15);
+  border-radius: 8px;
+  gap: 1rem;
+  box-sizing: border-box;
+  background: white;
+  transition: all 250ms ease-in-out;
+}
+
+.mode-header {
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mode .icon {
+  padding: 10px;
+  background: var(--lightBlue, #f0f4fd);
+  border-radius: 5px;
+  color: var(--blue, #4066ff);
+}
+
+.mode .detail .primaryText {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.mode .button {
+  width: 100%;
+  padding: 0.6rem 0;
+  background: var(--lightBlue, #ebf3ff);
+  color: var(--blue, #4066ff);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.mode:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mode .button:hover {
+  background: var(--blue-gradient, #4066ff);
+  color: white;
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+  .c-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .c-left,
+  .c-right {
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .c-left {
+    align-items: center;
+  }
+
+  .contactModes {
+    align-items: center;
+  }
+
+  .c-right .image-container {
+    width: 24rem;
+    height: 28rem;
+  }
 }
-.c-left{
-    gap: 0.5rem;
-}
-.contactModes{
-    margin-top: 2rem;
+
+/* Mobile Breakpoint */
+@media (max-width: 640px) {
+  .contactModes .row {
+    flex-direction: column;
     gap: 1rem;
-}
-
-.contactModes .row{
-    gap: 1.5rem;
-}
-
-.mode{
-    width: 20rem;
-    padding: 1rem;
-    border: 9.8px solid rgba(128, 128, 128, 0.143);
-    border-radius: 5px;
-    gap: 1rem;
-    transition: all 300ms ease-in;
-}
-.mode.button{
     width: 100%;
-    background: var(--lighBlue);
-    color: var(--blue);
-    font-size: 0.9rem;
-    font-weight: 600;
-    
+  }
 
-}
-.mode>:nth-child(1){
+  .mode {
     width: 100%;
-    gap: 1.6rem;
-}
+  }
 
-.mode.detail.primartText{
-    font-size: 1.1rem;
-    font-weight: 600;
-     
-}
-.mode:hover{
-    scale: 1.1;
-    box-shadow: var(--shadow);
-}
-
-.mode.button:hover{
-    background: var(--blue-gradient);
-    color: white;
-    scale: 0.8;
-}
-
-@media (max-width:1024px){
-    .c-container{
-        flex-direction: column;
-    }
-    .c-right{
-        justify-content: center;
-    }
-    .c-left{
-        justify-content: center;
-    }
-    .contactModes{
-        width: 100%;
-    }
-    .row{
-        flex-direction: column;
-        width: 100%;
-    }
-    .mode{
-        width: 100%;
-    }
+  .c-right .image-container {
+    width: 100%;
+    height: 22rem;
+  }
 }

@@ -9,10 +9,10 @@ const GetStarted = () => {
           <span className="primaryText">Get started with Homyz</span>
           <span className="secondaryText">
             Subscribe and find super attractive price quotes from us.
-            <br /> Find your residence soon
+            <br className="desktop-break" /> Find your residence soon
           </span>
-          <button className="button">
-            <a href="mailto:kbcshdgif123@gmai.com">Get Started</a>
+          <button className="button g-btn">
+            <a href="mailto:kbcshdgif123@gmail.com">Get Started</a>
           </button>
         </div>
       </div>
