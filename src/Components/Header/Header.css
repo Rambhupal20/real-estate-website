@@ -78,6 +78,9 @@
     z-index: 100;
     min-width: 14rem;
   }
+  .h-container{
+    gap: 20rem;
+  }
 
   .h-menu a {
     color: var(--black, #1f3e72);
@@ -98,5 +101,8 @@
     width: calc(100% - 3rem);
     right: -120%;
     padding: 2rem 1.5rem;
+  }
+  .h-container{
+    gap: 1.5rem;
   }
 }
